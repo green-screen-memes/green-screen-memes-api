@@ -147,6 +147,7 @@ API doesn't license it to you.** How you use a clip is your responsibility.
 
 - On paid plans, clips can go in apps and in videos you publish for yourself or
   clients. Sandbox keys are for building and testing.
+- Organic posts on a business's own or its clients' accounts are fine, people included.
 - Clips of identifiable people can't be used in paid ads, sponsored posts or
   endorsements. Animals, objects and cartoons are fine there.
 - Don't use clips listed by `GET /v1/removed` in new work, and drop them from

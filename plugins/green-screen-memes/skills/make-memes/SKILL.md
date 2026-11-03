@@ -115,7 +115,8 @@ until next month (UTC) or an upgrade; it never bills overage.
   their responsibility. Never describe the clips as "royalty-free" or "licensed".
 - **Paid ads, sponsored posts and endorsements:** no clips with identifiable people.
   Animals, objects and cartoons are fine there. Organic posts on the brand's own
-  account are fine on a paid plan, within the terms. If the user mentions ads or
+  or its clients' accounts are fine on a paid plan, people included. Don't treat them
+  as ads. If the user mentions ads or
   boosting a post, pick accordingly and tell them why.
 - Sandbox keys are for building and testing; publishing needs a paid plan.
 - Don't resell or redistribute the clip library itself, and don't use clips that

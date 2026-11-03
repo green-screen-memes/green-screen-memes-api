@@ -106,6 +106,8 @@ https://api.greenscreenmemes.app/v1/openapi.json
 - The clips are internet memes. Green Screen Memes makes and curates the green screen
   versions, but the original footage isn't licensed to the user, and how they use it is
   their responsibility. Never call the clips "royalty-free" or "licensed".
+- Organic posts on a business's own or its clients' accounts are fine on a paid plan,
+  people included.
 - No clips of identifiable people in paid ads, sponsored posts or endorsements. Animals,
   objects and cartoons are fine there.
 - Sandbox keys are for building and testing. Don't resell the library, and don't use
