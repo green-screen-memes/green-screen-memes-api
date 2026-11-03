@@ -27,8 +27,8 @@ Compositing script: `${CLAUDE_SKILL_DIR}/scripts/meme.sh`.
   but `GSM_API_KEY` is set, the REST API with `curl` does the same job (reference.md).
 - **ffmpeg:** `ffmpeg -hide_banner -filters | grep -E "chromakey|drawtext"` should list
   both. Without `drawtext`, captions need another ffmpeg build (reference.md).
-- **Plan limits:** Sandbox (free) is 50 video downloads and 30,000 calls a month and is
-  for building and testing. Publishing the videos needs a paid plan (from $49/month,
+- **Plan limits:** Sandbox (free) is 50 video downloads in total (they don't reset) and 30,000
+  calls a month, for building and testing. Publishing the videos needs a paid plan (from $49/month,
   https://api.greenscreenmemes.app/#pricing). Say so before a big batch, and keep the
   batch within the remaining downloads.
 

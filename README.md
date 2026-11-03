@@ -38,8 +38,8 @@ Everything except the MCP setup needs [FFmpeg](https://ffmpeg.org/download.html)
 ## 1. Get a free key
 
 Sign in at https://api.greenscreenmemes.app/dashboard (Google or email link) and
-create a free **Sandbox** key: 50 video downloads and 30,000 calls a month, for
-building and testing. Then:
+create a free **Sandbox** key: 50 video downloads in total and 30,000 calls a month,
+for building and testing. Then:
 
 ```sh
 cp .env.example .env          # put your key in GSM_API_KEY

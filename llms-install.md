@@ -14,7 +14,7 @@ you only add the server URL and the user's API key to the MCP client's config.
 Ask the user for their Green Screen Memes API key (it starts with `gsm_live_`). If they
 don't have one, they can create a free **Sandbox** key at
 https://api.greenscreenmemes.app/dashboard (sign in with Google or an email link). Sandbox
-includes 50 video downloads and 30,000 calls a month.
+includes 50 video downloads in total (one time, not monthly) and 30,000 calls a month.
 
 Never commit the key to a repository or paste it into shared files.
 

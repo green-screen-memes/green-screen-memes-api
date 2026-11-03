@@ -13,7 +13,7 @@ the browser.
 ## Setup
 
 1. **Key.** Free Sandbox key at https://api.greenscreenmemes.app/dashboard (50 video
-   downloads and 30,000 calls a month, for building and testing; publishing needs a paid
+   downloads in total and 30,000 calls a month, for building and testing; publishing needs a paid
    plan, from $49/month). Export it as `GSM_API_KEY` before starting the agent. Never
    write the key into a file in the repo.
 2. **MCP server** (Streamable HTTP, key as `Authorization: Bearer <key>`).

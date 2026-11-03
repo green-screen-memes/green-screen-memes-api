@@ -137,8 +137,9 @@ Each clip has `id`, `name`, `description`, `tags`, `chromaKeyColor`, `durationSe
 ## Errors
 
 - **401**: missing or wrong key. `GSM_API_KEY` must be set before Claude Code starts.
-- **429**: rate limit (120 requests a minute on Sandbox and Starter) or the month's
-  calls or downloads are used up. `get_usage` says which.
+- **429**: rate limit (120 requests a minute on Sandbox and Starter) or the plan's
+  calls or downloads are used up (Sandbox's 50 free downloads don't reset). `get_usage`
+  says which and how to upgrade.
 - **Download fails a few hours later**: the signed link expired; call `get_green_screen` again for a fresh one.
 
 ## More
