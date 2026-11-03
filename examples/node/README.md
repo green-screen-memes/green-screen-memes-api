@@ -23,7 +23,7 @@ What it does:
    is mixed in at 35% under the clip.
 
 Clips with `chromaKeyColor: "none"` are overlaid as they are. If a green fringe
-stays, raise the `0.3` similarity in `chromakey=...:0.3:0.08`.
+stays, raise the `0.2` similarity in `chromakey=...:0.2:0.05`.
 
 No test media handy? Make a background with ffmpeg:
 

@@ -105,13 +105,13 @@ Over a photo (vertical 1080x1920, clip at the bottom, keeps the clip's sound):
 ```sh
 ffmpeg -loop 1 -i background.jpg -i greenscreen.mp4 -filter_complex \
  "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];\
-  [1:v]chromakey=0x00ff00:0.3:0.08,scale=1080:-2[fg];\
+  [1:v]chromakey=0x00ff00:0.2:0.05,scale=1080:-2[fg];\
   [bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v]" \
  -map "[v]" -map "1:a?" -c:v libx264 -crf 20 -c:a aac meme.mp4
 ```
 
 Key colors: green `0x00ff00`, blue `0x0000ff`, red `0xff0000`. With `none`, the clip
-is used as-is. If a green fringe stays, raise `0.3` a little. Over a video with mixed
+is used as-is. If a green fringe stays, raise `0.2` a little; if parts of the subject turn see-through, lower it. Over a video with mixed
 audio: see [`examples/ffmpeg`](examples/ffmpeg).
 
 ## Video meme API

@@ -12,8 +12,8 @@
 # Environment (all optional):
 #   POSITION=bottom|center|top  where the clip sits (default bottom)
 #   CLIP_WIDTH=1080             clip width in px
-#   SIMILARITY=0.3              chromakey similarity: raise if a fringe stays, lower if the subject loses color
-#   BLEND=0.08                  chromakey edge blend
+#   SIMILARITY=0.2              chromakey similarity: raise if a fringe stays, lower if the subject turns see-through
+#   BLEND=0.05                  chromakey edge blend
 #   BG_VOLUME=0.35              background video's volume under the clip's sound
 #   CAPTION_Y=200               y of the first caption line
 #   FONTSIZE=64  TEXT_COLOR=white  BOX_COLOR=black  FONT=/path/to/font.ttf
@@ -28,8 +28,8 @@ shift 4
 
 position=${POSITION:-bottom}
 clip_w=${CLIP_WIDTH:-1080}
-sim=${SIMILARITY:-0.3}
-blend=${BLEND:-0.08}
+sim=${SIMILARITY:-0.2}
+blend=${BLEND:-0.05}
 bg_volume=${BG_VOLUME:-0.35}
 cap_y=${CAPTION_Y:-200}
 fontsize=${FONTSIZE:-64}

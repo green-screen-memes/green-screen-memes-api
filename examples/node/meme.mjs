@@ -51,7 +51,7 @@ if (run.status !== 0) fail(`ffmpeg exited with ${run.status}`);
 console.log(`Done: ${out}`);
 
 function ffmpegArgs({ background, clipFile, out, keyColor, bgIsVideo }) {
-  const fg = keyColor ? `[1:v]chromakey=${keyColor}:0.3:0.08,scale=1080:-2[fg]` : '[1:v]scale=1080:-2[fg]';
+  const fg = keyColor ? `[1:v]chromakey=${keyColor}:0.2:0.05,scale=1080:-2[fg]` : '[1:v]scale=1080:-2[fg]';
   let graph = `[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];${fg};[bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v]`;
   let audio = ['-map', '1:a?'];
   // Over a video that has sound: keep it quietly under the clip's own audio.

@@ -82,7 +82,7 @@ MCP tools: `search_green_screens` (query, tag, color, limit, cursor), `get_green
 5. **Check a frame** of every meme you're unsure of (at least the first of a batch):
    `ffmpeg -y -v error -ss 1.5 -i out/01.mp4 -frames:v 1 out/01.png`, then look for
    leftover key color, a cut-off subject, and captions outside the frame or over a face.
-   Raise `SIMILARITY` from 0.3 if a fringe stays.
+   Lower `SIMILARITY` from 0.2 if parts of the subject turn see-through; raise it a little if a green fringe stays.
 6. **Usage.** `get_usage` before and after a batch; report memes made, file paths and
    downloads left. 429 means the rate limit or the month's quota is reached.
 

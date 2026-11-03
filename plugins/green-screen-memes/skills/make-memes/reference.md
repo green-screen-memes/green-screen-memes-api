@@ -12,7 +12,7 @@ bad composite. The bundled `scripts/meme.sh` covers the common cases.
 | `red` | `0xff0000` |
 | `none` | no key: drop the `chromakey` filter and use the clip as-is |
 
-`chromakey=COLOR:0.3:0.08` is similarity and blend. Raise `0.3` (0.35, 0.4) if a colored
+`chromakey=COLOR:0.2:0.05` is similarity and blend. Raise `0.2` (0.25, 0.3) if a colored
 fringe or patches of background stay; lower it if parts of the subject turn transparent.
 
 ## Over a photo
@@ -23,7 +23,7 @@ on a silent clip). This is the recipe `get_green_screen` returns.
 ```sh
 ffmpeg -loop 1 -i background.jpg -i greenscreen.mp4 -filter_complex \
  "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];\
-  [1:v]chromakey=0x00ff00:0.3:0.08,scale=1080:-2[fg];\
+  [1:v]chromakey=0x00ff00:0.2:0.05,scale=1080:-2[fg];\
   [bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v]" \
  -map "[v]" -map "1:a?" -c:v libx264 -crf 20 -c:a aac meme.mp4
 ```
@@ -38,7 +38,7 @@ otherwise use `-map "1:a?"` as above. `normalize=0` needs FFmpeg 5 or later.
 ```sh
 ffmpeg -stream_loop -1 -i background.mp4 -i greenscreen.mp4 -filter_complex \
  "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];\
-  [1:v]chromakey=0x00ff00:0.3:0.08,scale=1080:-2[fg];\
+  [1:v]chromakey=0x00ff00:0.2:0.05,scale=1080:-2[fg];\
   [bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v];\
   [0:a]volume=0.35[bga];[1:a][bga]amix=inputs=2:duration=first:normalize=0[a]" \
  -map "[v]" -map "[a]" -c:v libx264 -crf 20 -c:a aac meme.mp4
@@ -48,7 +48,7 @@ ffmpeg -stream_loop -1 -i background.mp4 -i greenscreen.mp4 -filter_complex \
 
 ```sh
 ffmpeg -f lavfi -i "color=c=white:s=1080x1920:r=30" -i greenscreen.mp4 -filter_complex \
- "[1:v]chromakey=0x00ff00:0.3:0.08,scale=1080:-2[fg];\
+ "[1:v]chromakey=0x00ff00:0.2:0.05,scale=1080:-2[fg];\
   [0:v][fg]overlay=(W-w)/2:(H-h)/2:shortest=1,format=yuv420p[v]" \
  -map "[v]" -map "1:a?" -c:v libx264 -crf 20 -c:a aac meme.mp4
 ```

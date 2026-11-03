@@ -21,8 +21,8 @@ case $color in
   *) echo "Unknown key color: $color (use green, blue, red or none)" >&2; exit 1 ;;
 esac
 
-# Raise 0.3 if a fringe stays; lower it if the subject loses color.
-if [ -n "$key" ]; then fg="[1:v]chromakey=$key:0.3:0.08,scale=1080:-2[fg]"; else fg="[1:v]scale=1080:-2[fg]"; fi
+# Raise 0.2 a little if a fringe stays; lower it if the subject turns see-through.
+if [ -n "$key" ]; then fg="[1:v]chromakey=$key:0.2:0.05,scale=1080:-2[fg]"; else fg="[1:v]scale=1080:-2[fg]"; fi
 
 ffmpeg -y -hide_banner -loglevel error \
   -loop 1 -i "$bg" -i "$clip" \

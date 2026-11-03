@@ -42,7 +42,7 @@ await pipeline(Readable.fromWeb(res.body), createWriteStream(clipFile));
 // 3. Key and composite.
 const keyColor = KEY_COLORS[top.chromaKeyColor];
 const bgIsVideo = VIDEO_EXT.test(background);
-const fg = keyColor ? `[1:v]chromakey=${keyColor}:0.3:0.08,scale=1080:-2[fg]` : '[1:v]scale=1080:-2[fg]';
+const fg = keyColor ? `[1:v]chromakey=${keyColor}:0.2:0.05,scale=1080:-2[fg]` : '[1:v]scale=1080:-2[fg]';
 let video = '[bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p';
 if (caption) {
   // drawtext doesn't wrap: split lines with "\n" and each gets its own drawtext, 90 px apart.

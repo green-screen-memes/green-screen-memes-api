@@ -25,7 +25,7 @@ Over a photo:
 ```sh
 ffmpeg -loop 1 -i background.jpg -i greenscreen.mp4 -filter_complex \
  "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];\
-  [1:v]chromakey=0x00ff00:0.3:0.08,scale=1080:-2[fg];\
+  [1:v]chromakey=0x00ff00:0.2:0.05,scale=1080:-2[fg];\
   [bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v]" \
  -map "[v]" -map "1:a?" -c:v libx264 -crf 20 -c:a aac meme.mp4
 ```
@@ -36,7 +36,7 @@ soundtracks:
 ```sh
 ffmpeg -stream_loop -1 -i background.mp4 -i greenscreen.mp4 -filter_complex \
  "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];\
-  [1:v]chromakey=0x00ff00:0.3:0.08,scale=1080:-2[fg];\
+  [1:v]chromakey=0x00ff00:0.2:0.05,scale=1080:-2[fg];\
   [bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v];\
   [0:a]volume=0.35[bga];[1:a][bga]amix=inputs=2:duration=first:normalize=0[a]" \
  -map "[v]" -map "[a]" -c:v libx264 -crf 20 -c:a aac meme.mp4
@@ -44,7 +44,7 @@ ffmpeg -stream_loop -1 -i background.mp4 -i greenscreen.mp4 -filter_complex \
 
 - **Key colors:** green `0x00ff00`, blue `0x0000ff`, red `0xff0000`. With `none`,
   drop the `chromakey` and use the clip as-is.
-- **Fringe:** raise `0.3` if a colored edge stays; lower it if the subject loses color.
+- **Fringe:** raise `0.2` a little if a colored edge stays; lower it if the subject turns see-through.
 - **Position and size:** `overlay=(W-w)/2:H-h` is x:y; `scale=1080:-2` is the clip's width.
 - **Sound:** `-map 1:a?` keeps the clip's audio and doesn't fail on a silent clip.
   The mix needs both inputs to have audio; the script checks with `ffprobe` first.

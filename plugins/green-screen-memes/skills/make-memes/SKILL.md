@@ -84,7 +84,7 @@ bash "${CLAUDE_SKILL_DIR}/scripts/meme.sh" color:white clips/side-eye.mp4 blue o
 
 The third argument is the clip's `chromaKeyColor` (`green`, `blue`, `red` or `none`).
 Options are environment variables: `POSITION=bottom|center|top`, `SIMILARITY` (raise from
-0.3 if a colored fringe stays), `FONTSIZE`, `CAPTION_Y`, `TEXT_COLOR`, `BOX_COLOR`,
+0.2 if a colored fringe stays, lower it if the subject turns see-through), `FONTSIZE`, `CAPTION_Y`, `TEXT_COLOR`, `BOX_COLOR`,
 `BG_VOLUME`. The script draws one boxed `drawtext` per line and reads text from files, so
 quotes, colons and `%` need no escaping. To hand-write the command instead (or adapt the
 recipe `get_green_screen` returned), see reference.md.

@@ -34,7 +34,7 @@ Why pre-key instead of keying per frame in a `<canvas>`:
   `transparent` makes the renderer extract frames as PNG with alpha, so preview and
   render match.
 - **Fast renders.** No per-pixel JavaScript on every frame.
-- **Same key as the other examples.** One place to tune the similarity (`0.3`) if a
+- **Same key as the other examples.** One place to tune the similarity (`0.2`) if a
   fringe stays.
 
 The trade-off is one ffmpeg step before rendering. If you'd rather key live in the

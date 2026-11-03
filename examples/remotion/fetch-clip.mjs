@@ -39,7 +39,7 @@ await pipeline(Readable.fromWeb(res.body), createWriteStream('public/greenscreen
 // Pre-key: the same chromakey settings as the API's ffmpeg recipe, written as VP9 with
 // alpha (yuva420p). -auto-alt-ref 0 is required for libvpx to keep the alpha channel.
 const keyColor = KEY_COLORS[clip.chromaKeyColor];
-const filter = keyColor ? `chromakey=${keyColor}:0.3:0.08,format=yuva420p` : 'format=yuva420p';
+const filter = keyColor ? `chromakey=${keyColor}:0.2:0.05,format=yuva420p` : 'format=yuva420p';
 const ff = spawnSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', 'public/greenscreen.mp4',
   '-vf', filter, '-c:v', 'libvpx-vp9', '-pix_fmt', 'yuva420p', '-auto-alt-ref', '0', '-b:v', '0', '-crf', '30', '-row-mt', '1',
   '-c:a', 'libopus', '-b:a', '128k', 'public/greenscreen.webm'], { stdio: 'inherit' });

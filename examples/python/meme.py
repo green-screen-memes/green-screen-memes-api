@@ -63,7 +63,7 @@ def has_audio(path):
 
 
 def ffmpeg_args(background, clip_file, out, key_color, bg_is_video):
-    fg = f"[1:v]chromakey={key_color}:0.3:0.08,scale=1080:-2[fg]" if key_color else "[1:v]scale=1080:-2[fg]"
+    fg = f"[1:v]chromakey={key_color}:0.2:0.05,scale=1080:-2[fg]" if key_color else "[1:v]scale=1080:-2[fg]"
     graph = (
         "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];"
         f"{fg};[bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v]"

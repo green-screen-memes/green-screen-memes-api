@@ -23,7 +23,7 @@ case $color in
   *) echo "Unknown key color: $color (use green, blue, red or none)" >&2; exit 1 ;;
 esac
 
-if [ -n "$key" ]; then fg="[1:v]chromakey=$key:0.3:0.08,scale=1080:-2[fg]"; else fg="[1:v]scale=1080:-2[fg]"; fi
+if [ -n "$key" ]; then fg="[1:v]chromakey=$key:0.2:0.05,scale=1080:-2[fg]"; else fg="[1:v]scale=1080:-2[fg]"; fi
 graph="[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[bg];$fg;[bg][fg]overlay=(W-w)/2:H-h:shortest=1,format=yuv420p[v]"
 
 has_audio() { [ -n "$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$1")" ]; }
