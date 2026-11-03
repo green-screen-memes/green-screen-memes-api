@@ -1,0 +1,27 @@
+# Secrets
+.env
+.env.local
+
+# Dependencies and builds
+node_modules/
+out/
+dist/
+__pycache__/
+*.pyc
+
+# Media the examples download or make (clips are covered by the API terms, not this repo)
+*.mp4
+*.mov
+*.webm
+*.jpg
+*.jpeg
+*.png
+caption-*.txt
+examples/remotion/public/*
+!examples/remotion/public/.gitkeep
+examples/remotion/public/clip.json
+
+# OS and editors
+.DS_Store
+.vscode/
+.idea/

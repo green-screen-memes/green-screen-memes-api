@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "green-screen-memes": {
+      "url": "https://api.greenscreenmemes.app/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:GSM_API_KEY}"
+      }
+    }
+  }
+}
