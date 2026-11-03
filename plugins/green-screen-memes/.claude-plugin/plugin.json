@@ -1,0 +1,27 @@
+{
+  "name": "green-screen-memes",
+  "displayName": "Green Screen Memes",
+  "description": "Make video memes for a brand or a feed: the Green Screen Memes MCP server (search about 2,100 green screen reaction clips) plus a skill that plans captions and composites clips with ffmpeg, one meme or a batch.",
+  "author": {
+    "name": "Green Screen Memes",
+    "email": "info@greenscreenmemes.app",
+    "url": "https://api.greenscreenmemes.app"
+  },
+  "homepage": "https://api.greenscreenmemes.app/docs",
+  "repository": "https://github.com/green-screen-memes/green-screen-memes-api",
+  "license": "MIT",
+  "keywords": [
+    "memes",
+    "video",
+    "green screen",
+    "ffmpeg",
+    "tiktok",
+    "reels",
+    "shorts",
+    "mcp"
+  ],
+  "documentationUrl": "https://api.greenscreenmemes.app/docs",
+  "supportUrl": "mailto:info@greenscreenmemes.app",
+  "privacyPolicyUrl": "https://api.greenscreenmemes.app/privacy",
+  "termsOfServiceUrl": "https://api.greenscreenmemes.app/terms"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "green-screen-memes",
+  "description": "Make video memes with the Green Screen Memes API: about 2,100 green screen reaction clips, searchable over MCP, plus a skill that composites them with ffmpeg.",
+  "owner": {
+    "name": "Green Screen Memes",
+    "email": "info@greenscreenmemes.app",
+    "url": "https://api.greenscreenmemes.app"
+  },
+  "plugins": [
+    {
+      "name": "green-screen-memes",
+      "source": "./plugins/green-screen-memes",
+      "description": "Green Screen Memes MCP server and a make-memes skill: plan captions, find reaction clips, key them over your photos or videos with ffmpeg, in batches.",
+      "category": "media",
+      "tags": ["memes", "video", "green-screen", "ffmpeg", "social-media", "mcp"]
+    }
+  ]
+}

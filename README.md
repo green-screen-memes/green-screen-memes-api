@@ -8,6 +8,21 @@ subject, over **REST** or **MCP**. New clips are added every day.
 Each example finds a clip, downloads it and keys it over your own photo or video,
 ending with a 1080x1920 MP4 for Shorts, Reels or TikTok.
 
+## Use as a Claude Code plugin
+
+This repo is also a Claude Code plugin marketplace. The plugin sets up the MCP server
+and adds a `make-memes` skill that plans captions, finds clips and composites them with
+ffmpeg, one meme or a whole batch. Set `GSM_API_KEY` ([free key](https://api.greenscreenmemes.app/dashboard))
+in the shell you start Claude Code from, then run:
+
+```
+/plugin marketplace add green-screen-memes/green-screen-memes-api
+/plugin install green-screen-memes@green-screen-memes
+```
+
+Then ask something like "I need a lot of memes for my business". Codex and other
+agents: see [AGENTS.md](AGENTS.md) for the same workflow and MCP setup.
+
 | Example | What it shows | Run it |
 |---|---|---|
 | [`claude-code/`](examples/claude-code) | Connect the MCP server, then make a meme from one prompt | `claude mcp add --transport http green-screen-memes https://api.greenscreenmemes.app/mcp --header "Authorization: Bearer $GSM_API_KEY"` |
